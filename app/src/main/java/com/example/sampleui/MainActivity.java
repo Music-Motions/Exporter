@@ -69,10 +69,16 @@ public class MainActivity extends AppCompatActivity {
         int mMinute = calendar.get(Calendar.MINUTE);
         int mSecond = calendar.get(Calendar.SECOND);
 
-
-
-        FILE = Environment.getExternalStorageDirectory()+"/Music/"  + mMonth +"." + mDay + "." + mYear + "-" + mHour + ":" + mMinute + ":" + mSecond + ".3gpp";
-
+        String year = Integer.toString(mYear);
+        String month = Integer.toString(mMonth);
+        String day = Integer.toString(mDay);
+        String hour = Integer.toString(mHour);
+        String min = Integer.toString(mMinute);
+        String sec = Integer.toString(mSecond);
+        String timestamp = month +"_" + day  + "_" + hour + ";" + min;
+        
+        FILE = Environment.getExternalStorageDirectory() + "/Music/"  +"/" + timestamp +".3gpp";
+        
         Log.d("Suhani", "The place is " + Environment.getExternalStorageDirectory().getAbsolutePath());
         buttonSound();
 
